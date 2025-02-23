@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-item {
+  @apply block py-2 px-4 text-menuText hover:bg-menuHoverBg rounded-md;
+}
