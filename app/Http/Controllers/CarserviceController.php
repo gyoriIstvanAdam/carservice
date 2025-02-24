@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\EventEnum;
 use App\Models\Cars;
 use App\Models\Clients;
 use App\Models\Services;
@@ -43,7 +44,7 @@ class CarserviceController extends Controller
                     'registration_date' => $car->registered,
                     'is_own_brand' => $car->ownbrand,
                     'accident_count' => $car->accidents,
-                    'service_log' => optional($latestService)->event,
+                    'service_log' => $latestService ? EventEnum::make($latestService->event)->label : null,
                     'service_log_date' => optional($latestService)->event_time,
                 ];
             });
@@ -53,19 +54,17 @@ class CarserviceController extends Controller
 
     public function getCarServices($carId)
     {
-        $uniqueEvents = Services::select('event')->distinct()->pluck('event');
         $services = Services::where('car_id', $carId)
             ->get()
             ->map(function ($service) {
                 return [
                     'service_id' => $service->id,
-                    'event' => $service->event,
+                    'event' => EventEnum::make($service->event)->label,
                     'log_number' => $service->log_number,
                     'event_time' => $service->event_time ?? $service->car->registered,
                     'document_id' => $service->document_id,
                 ];
             });
-        ray($uniqueEvents);
         return response()->json($services);
     }
 

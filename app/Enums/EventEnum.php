@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use Spatie\Enum\Laravel\Enum;
+use Spatie\Enum\Enum;
 
 /**
  * @method static self regisztralt()
@@ -27,22 +27,22 @@ final class EventEnum extends Enum
     protected static function values(): array
     {
         return [
-            'regisztralt' => 0,
-            'kotelezo_szerviz' => 1,
-            'javithatatlan' => 2,
-            'kiregisztralt' => 3,
-            'visszahivasrol_ertesitve' => 4,
-            'visszahivasra_idopontot_kert' => 5,
-            'visszahivasra_idopontot_modositott' => 6,
-            'visszahivasra_jelentkezett' => 7,
-            'kotelezo_szervizre_felszolitva' => 8,
-            'kotelezo_szervizre_2szor_felszolitva' => 9,
-            'kotelezo_szervizre_idopontot_kert' => 10,
-            'kotelezo_szervizre_megjelent' => 11,
-            'meghibasodas' => 12,
-            'javitas_megkezdve' => 13,
-            'javitas_elkeszult' => 14,
-            'kotelezo_szervizre_idopontot_modositott' => 15,
+            'regisztralt' => 'regisztralt',
+            'kotelezo_szerviz' => 'kotelezo_szerviz',
+            'javithatatlan' => 'javithatatlan',
+            'kiregisztralt' => 'kiregisztralt',
+            'visszahivasrol_ertesitve' => 'visszahivasrol_ertesitve',
+            'visszahivasra_idopontot_kert' => 'visszahivasra_idopontot_kert',
+            'visszahivasra_idopontot_modositott' => 'visszahivasra_idopontot_modositott',
+            'visszahivasra_jelentkezett' => 'visszahivasra_jelentkezett',
+            'kotelezo_szervizre_felszolitva' => 'kotelezo_szervizre_felszolitva',
+            'kotelezo_szervizre_2szor_felszolitva' => 'kotelezo_szervizre_2szor_felszolitva',
+            'kotelezo_szervizre_idopontot_kert' => 'kotelezo_szervizre_idopontot_kert',
+            'kotelezo_szervizre_megjelent' => 'kotelezo_szervizre_megjelent',
+            'meghibasodas' => 'meghibasodas',
+            'javitas_megkezdve' => 'javitas_megkezdve',
+            'javitas_elkeszult' => 'javitas_elkeszult',
+            'kotelezo_szervizre_idopontot_modositott' => 'kotelezo_szervizre_idopontot_modositott',
         ];
     }
 
