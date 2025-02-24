@@ -53,6 +53,7 @@ class CarserviceController extends Controller
 
     public function getCarServices($carId)
     {
+        $uniqueEvents = Services::select('event')->distinct()->pluck('event');
         $services = Services::where('car_id', $carId)
             ->get()
             ->map(function ($service) {
@@ -64,7 +65,7 @@ class CarserviceController extends Controller
                     'document_id' => $service->document_id,
                 ];
             });
-
+        ray($uniqueEvents);
         return response()->json($services);
     }
 

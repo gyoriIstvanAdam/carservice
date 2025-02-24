@@ -1,6 +1,6 @@
 <template>
                    <div v-if="client">
-                     <button @click="$emit('back')">Back</button>
+                     <button @click="$emit('back')" class="btn btn-secondary bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600">Back</button>
                      <h2 class="text-xl font-bold mt-4">{{ client.name }} gépjárművei:</h2>
                      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
                        <thead>
